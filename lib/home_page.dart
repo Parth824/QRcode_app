@@ -27,79 +27,77 @@ class _HomePageState extends State<HomePage> {
         // orientation: pw.PageOrientation.natural,
 
         build: (context) {
-          return pw.Center(
-            child: pw.Padding(
-              padding: pw.EdgeInsets.all(10),
-              child: pw.Container(
-              child: pw.Row(
-                mainAxisAlignment: pw.MainAxisAlignment.start,
-                // crossAxisAlignment: pw.CrossAxisAlignment.center,
-                children: [
-                  pw.Column(
-                    children: 
-                    [
-                      pw.Transform.translate(
-                    offset: PdfPoint(15.5, -6.5),
-                    child: pw.Transform.rotate(
-                      angle: pi / 2,
-                      child: pw.Text(
-                        "QAZAX UCUZLUQ",
-                        style: pw.TextStyle(
-                          fontSize: 2.5,
-                        ),
+          return pw.Padding(
+            padding: pw.EdgeInsets.all(10),
+            child: pw.Container(
+            child: pw.Row(
+              mainAxisAlignment: pw.MainAxisAlignment.start,
+              // crossAxisAlignment: pw.CrossAxisAlignment.center,
+              children: [
+                pw.Column(
+                  children: 
+                  [
+                    pw.Transform.translate(
+                  offset: PdfPoint(2, -1),
+                  child: pw.Transform.rotate(
+                    angle: pi / 2,
+                    child: pw.Text(
+                      "QAZAX UCUZLUQ",
+                      style: pw.TextStyle(
+                        fontSize: 2,
                       ),
                     ),
                   ),
-                    ]
-                  ),
-                  pw.Transform.translate(
-                    offset: PdfPoint(0, 0),
-                    child: pw.Transform.rotate(
-                      angle: pi / 2,
+                ),
+                  ]
+                ),
+                pw.Transform.translate(
+                  offset: PdfPoint(-10.5, 6),
+                  child: pw.Transform.rotate(
+                    angle: pi / 2,
+                    child: pw.Container(
+                      height: 10,
+                      width: 20,
                       child: pw.Container(
-                        height: 13,
-                        width: 25,
-                        child: pw.Container(
-                          child: pw.BarcodeWidget(
-                            barcode: pw.Barcode.ean13(),
-                            data: "2603871760301",
-                            textStyle: pw.TextStyle(
-                              fontSize: 2,
-                            ),
+                        child: pw.BarcodeWidget(
+                          barcode: pw.Barcode.ean13(),
+                          data: "2603871760301",
+                          textStyle: pw.TextStyle(
+                            fontSize: 1.5,
                           ),
                         ),
                       ),
                     ),
                   ),
-                  pw.Transform.translate(
-                    offset: PdfPoint(-12.5, -5),
-                    child: pw.Transform.rotate(
-                      angle: pi / 2,
-                      child: pw.Text(
-                        "Vanna Sobahan",
-                        style: pw.TextStyle(
-                          fontSize: 2,
-                        ),
+                ),
+                pw.Transform.translate(
+                  offset: PdfPoint(-22, 2.2),
+                  child: pw.Transform.rotate(
+                    angle: pi / 2,
+                    child: pw.Text(
+                      "Vanna Sobahan",
+                      style: pw.TextStyle(
+                        fontSize: 2,
                       ),
                     ),
                   ),
-                  pw.Transform.translate(
-                    offset: PdfPoint(-22, 0),
-                    child: pw.Transform.rotate(
-                      angle: pi / 2,
-                      child: pw.Text(
-                        "3.40 AZN",
-                        style: pw.TextStyle(
-                          fontSize: 3,
-                          fontWeight: pw.FontWeight.bold,
-                        ),
+                ),
+                pw.Transform.translate(
+                  offset: PdfPoint(-31.5, 6),
+                  child: pw.Transform.rotate(
+                    angle: pi / 2,
+                    child: pw.Text(
+                      "3.40 AZN",
+                      style: pw.TextStyle(
+                        fontSize: 3,
+                        fontWeight: pw.FontWeight.bold,
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            )
+          ),
           );
         },
       ),
