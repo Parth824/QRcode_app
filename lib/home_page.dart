@@ -22,8 +22,11 @@ class _HomePageState extends State<HomePage> {
     // TODO: implement initState
     super.initState();
     pdf.addPage(
+
       pw.Page(
-        pageFormat: PdfPageFormat(58, 40),
+        pageFormat: PdfPageFormat(58, 40).landscape,
+       // orientation: pw.PageOrientation.natural,
+
         build: (context) {
           return pw.Center(
             child: pw.Column(
@@ -31,7 +34,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: pw.CrossAxisAlignment.center,
               children: [
                 pw.Transform.rotate(
-                  angle: pi / 2,
+                  angle: pi/2,
                   child: pw.Container(
                     height: 20,
                     width: 29,
