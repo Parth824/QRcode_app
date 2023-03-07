@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -14,32 +16,35 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final pdf = pw.Document();
-  
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     pdf.addPage(
-    
       pw.Page(
         pageFormat: PdfPageFormat(58, 40),
         build: (context) {
           return pw.Center(
             child: pw.Column(
               mainAxisAlignment: pw.MainAxisAlignment.center,
+              crossAxisAlignment: pw.CrossAxisAlignment.center,
               children: [
-                pw.Container(
-                  height: 20,
-                  width: 29,
+                pw.Transform.rotate(
+                  angle: pi / 2,
                   child: pw.Container(
-                    alignment: pw.Alignment.center,
-                    child: pw.BarcodeWidget(
-                      barcode: pw.Barcode.ean13(),
-                      data: "123456789123",
-                      textStyle: pw.TextStyle(fontSize: 3),
+                    height: 20,
+                    width: 29,
+                    child: pw.Container(
+                      alignment: pw.Alignment.center,
+                      child: pw.BarcodeWidget(
+                        barcode: pw.Barcode.ean13(),
+                        data: "123456789123",
+                        textStyle: pw.TextStyle(fontSize: 3),
+                      ),
                     ),
                   ),
-                ),
+                )
               ],
             ),
           );
@@ -70,7 +75,6 @@ class _HomePageState extends State<HomePage> {
             value: "www.google.com",
             symbology: QRCode(),
             showValue: true,
-
           ),
         ),
       ),
