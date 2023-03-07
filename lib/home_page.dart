@@ -36,8 +36,8 @@ class _HomePageState extends State<HomePage> {
                 pw.Transform.rotate(
                   angle: pi/2,
                   child: pw.Container(
-                    height: 20,
-                    width: 29,
+                    height: 15,
+                    width: 25,
                     child: pw.Container(
                       alignment: pw.Alignment.center,
                       child: pw.BarcodeWidget(
