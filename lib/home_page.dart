@@ -22,34 +22,84 @@ class _HomePageState extends State<HomePage> {
     // TODO: implement initState
     super.initState();
     pdf.addPage(
-
       pw.Page(
         pageFormat: PdfPageFormat(58, 40).landscape,
-       // orientation: pw.PageOrientation.natural,
+        // orientation: pw.PageOrientation.natural,
 
         build: (context) {
           return pw.Center(
-            child: pw.Column(
-              mainAxisAlignment: pw.MainAxisAlignment.center,
-              crossAxisAlignment: pw.CrossAxisAlignment.center,
-              children: [
-                pw.Transform.rotate(
-                  angle: pi/2,
-                  child: pw.Container(
-                    height: 15,
-                    width: 25,
-                    child: pw.Container(
-                      alignment: pw.Alignment.center,
-                      child: pw.BarcodeWidget(
-                        barcode: pw.Barcode.ean13(),
-                        data: "123456789123",
-                        textStyle: pw.TextStyle(fontSize: 3),
+            child: pw.Padding(
+              padding: pw.EdgeInsets.all(10),
+              child: pw.Container(
+              child: pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.start,
+                // crossAxisAlignment: pw.CrossAxisAlignment.center,
+                children: [
+                  pw.Column(
+                    children: 
+                    [
+                      pw.Transform.translate(
+                    offset: PdfPoint(15.5, -6.5),
+                    child: pw.Transform.rotate(
+                      angle: pi / 2,
+                      child: pw.Text(
+                        "QAZAX UCUZLUQ",
+                        style: pw.TextStyle(
+                          fontSize: 2.5,
+                        ),
                       ),
                     ),
                   ),
-                )
-              ],
+                    ]
+                  ),
+                  pw.Transform.translate(
+                    offset: PdfPoint(0, 0),
+                    child: pw.Transform.rotate(
+                      angle: pi / 2,
+                      child: pw.Container(
+                        height: 13,
+                        width: 25,
+                        child: pw.Container(
+                          child: pw.BarcodeWidget(
+                            barcode: pw.Barcode.ean13(),
+                            data: "2603871760301",
+                            textStyle: pw.TextStyle(
+                              fontSize: 2,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  pw.Transform.translate(
+                    offset: PdfPoint(-12.5, -5),
+                    child: pw.Transform.rotate(
+                      angle: pi / 2,
+                      child: pw.Text(
+                        "Vanna Sobahan",
+                        style: pw.TextStyle(
+                          fontSize: 2,
+                        ),
+                      ),
+                    ),
+                  ),
+                  pw.Transform.translate(
+                    offset: PdfPoint(-22, 0),
+                    child: pw.Transform.rotate(
+                      angle: pi / 2,
+                      child: pw.Text(
+                        "3.40 AZN",
+                        style: pw.TextStyle(
+                          fontSize: 3,
+                          fontWeight: pw.FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
+            )
           );
         },
       ),
@@ -84,17 +134,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-
-// pw.Container(
-//                   height: 150,
-//                   child: pw.BarcodeWidget(
-//                     barcode: pw.Barcode.qrCode(),
-//                     data: "www.google.com",
-//                   ),
-//                 ),
-        
-//                 pw.SizedBox(
-//                   height: 100
-//                 ),
-//                 
