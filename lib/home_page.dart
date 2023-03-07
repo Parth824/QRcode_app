@@ -14,37 +14,30 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final pdf = pw.Document();
-
+  
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     pdf.addPage(
+    
       pw.Page(
-        pageFormat: PdfPageFormat.a4,
+        pageFormat: PdfPageFormat(58, 40),
         build: (context) {
           return pw.Center(
             child: pw.Column(
               mainAxisAlignment: pw.MainAxisAlignment.center,
               children: [
                 pw.Container(
-                  height: 150,
-                  child: pw.BarcodeWidget(
-                    barcode: pw.Barcode.qrCode(),
-                    data: "www.freelancer.com",
-                  ),
-                ),
-
-                pw.SizedBox(
-                  height: 100
-                ),
-                pw.Container(
-                  height: 100,
-                  width: 250,
-                  child: pw.BarcodeWidget(
-                    barcode: pw.Barcode.code128(),
-                    data: "www.freelancer.com",
-                    
+                  height: 20,
+                  width: 29,
+                  child: pw.Container(
+                    alignment: pw.Alignment.center,
+                    child: pw.BarcodeWidget(
+                      barcode: pw.Barcode.ean13(),
+                      data: "123456789123",
+                      textStyle: pw.TextStyle(fontSize: 3),
+                    ),
                   ),
                 ),
               ],
@@ -74,12 +67,27 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           height: 200,
           child: SfBarcodeGenerator(
-            value: 'www.google.com',
+            value: "www.google.com",
             symbology: QRCode(),
             showValue: true,
+
           ),
         ),
       ),
     );
   }
 }
+
+
+// pw.Container(
+//                   height: 150,
+//                   child: pw.BarcodeWidget(
+//                     barcode: pw.Barcode.qrCode(),
+//                     data: "www.google.com",
+//                   ),
+//                 ),
+        
+//                 pw.SizedBox(
+//                   height: 100
+//                 ),
+//                 
