@@ -28,39 +28,42 @@ class _HomePageState extends State<HomePage> {
 
         build: (context) {
           return pw.Padding(
-            padding: pw.EdgeInsets.all(10),
+            padding: pw.EdgeInsets.all(11),
             child: pw.Container(
               child: pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.start,
                 // crossAxisAlignment: pw.CrossAxisAlignment.center,
                 children: [
-                  pw.Column(children: [
-                    pw.Transform.translate(
-                      offset: PdfPoint(5, -3),
-                      child: pw.Transform.rotate(
-                        angle: pi / 2,
-                        child: pw.Text(
-                          "QAZAX UCUZLUQ",
-                          style: pw.TextStyle(
-                            fontSize: 2,
+                  pw.Column(
+                    children: [
+                      pw.Transform.translate(
+                        offset: PdfPoint(-14, -3),
+                        child: pw.Transform.rotate(
+                          angle: pi / 2,
+                          child: pw.Text(
+                            "QAZAX UCUZLUQ",
+                            style: pw.TextStyle(
+                              fontSize: 2,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ]),
+                    ],
+                  ),
                   pw.Transform.translate(
-                    offset: PdfPoint(-7.5, 4),
+                    offset: PdfPoint(-27.5, 4),
                     child: pw.Transform.rotate(
                       angle: pi / 2,
                       child: pw.Container(
-                        height: 10,
+                        height: 7,
                         width: 20,
                         child: pw.Container(
                           child: pw.BarcodeWidget(
                             barcode: pw.Barcode.ean13(),
-                            data: "2603871760301",
+                            data: "8690605031404",
                             textStyle: pw.TextStyle(
-                              fontSize: 1.5,
+                              fontSize: 2.2,
+                              fontWeight: pw.FontWeight.bold,
                             ),
                           ),
                         ),
@@ -68,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   pw.Transform.translate(
-                    offset: PdfPoint(-19, 1.2),
+                    offset: PdfPoint(-40, 4),
                     child: pw.Transform.rotate(
                       angle: pi / 2,
                       child: pw.Text(
@@ -80,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   pw.Transform.translate(
-                    offset: PdfPoint(-30.5, 4),
+                    offset: PdfPoint(-54, 4),
                     child: pw.Transform.rotate(
                       angle: pi / 2,
                       child: pw.Text(
@@ -91,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-                  ),
+                  ),         
                 ],
               ),
             ),
