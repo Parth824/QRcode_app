@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     pdf.addPage(
       pw.Page(
-        pageFormat: PdfPageFormat(25, 35).landscape,
+        pageFormat: PdfPageFormat(58, 40).landscape,
         // orientation: pw.PageOrientation.natural,
 
         build: (context) {
@@ -34,26 +34,24 @@ class _HomePageState extends State<HomePage> {
             child: pw.Container(
               child: pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.start,
-                crossAxisAlignment: pw.CrossAxisAlignment.center,
+                // crossAxisAlignment: pw.CrossAxisAlignment.center,
                 children: [
-                  pw.Column(
-                    children: [
-                      pw.Transform.translate(
-                        offset: PdfPoint(-4.5, 1),
-                        child: pw.Transform.rotate(
-                          angle: pi / 2,
-                          child: pw.Text(
-                            "QAZAX UCUZLUQ",
-                            style: pw.TextStyle(
-                              fontSize: 2,
-                            ),
+                  pw.Column(children: [
+                    pw.Transform.translate(
+                      offset: PdfPoint(6, -3),
+                      child: pw.Transform.rotate(
+                        angle: pi / 2,
+                        child: pw.Text(
+                          "QAZAX UCUZLUQ",
+                          style: pw.TextStyle(
+                            fontSize: 2,
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ]),
                   pw.Transform.translate(
-                    offset: PdfPoint(-20.5, 0),
+                    offset: PdfPoint(-7.5, 4),
                     child: pw.Transform.rotate(
                       angle: pi / 2,
                       child: pw.Container(
@@ -64,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                             barcode: pw.Barcode.ean13(),
                             data: "8690605031404",
                             textStyle: pw.TextStyle(
-                              fontSize: 1.5,
+                              fontSize: 2.2,
                               fontWeight: pw.FontWeight.bold,
                             ),
                           ),
@@ -73,25 +71,25 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   pw.Transform.translate(
-                    offset: PdfPoint(-32, -2),
+                    offset: PdfPoint(-20, 4),
                     child: pw.Transform.rotate(
                       angle: pi / 2,
                       child: pw.Text(
                         "Vanna Sobahan",
                         style: pw.TextStyle(
-                          fontSize: 1,
+                          fontSize: 2,
                         ),
                       ),
                     ),
                   ),
                   pw.Transform.translate(
-                    offset: PdfPoint(-40, 0),
+                    offset: PdfPoint(-34, 4),
                     child: pw.Transform.rotate(
                       angle: pi / 2,
                       child: pw.Text(
                         "3.40        AZN",
                         style: pw.TextStyle(
-                          fontSize: 2,
+                          fontSize: 3,
                           fontWeight: pw.FontWeight.bold,
                         ),
                       ),
